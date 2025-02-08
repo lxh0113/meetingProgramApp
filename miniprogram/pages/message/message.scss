@@ -1,0 +1,41 @@
+/* pages/message/message.wxss */
+@import "../../common/common.scss";
+
+.bigBox {
+  display: flex;
+  flex-direction: column;
+
+  .message {
+    display: flex;
+    padding: 20rpx 0rpx;
+    border-bottom: 1px solid $primary-border-color;
+    margin-bottom: 20rpx;
+
+    >image {
+      width: 100rpx;
+      height: 100rpx;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 20rpx;
+
+      .form {
+        font-weight: bold;
+        margin-bottom: 10rpx;
+      }
+
+      .text {
+        color: $primary-gray-text-color;
+        font-size: 32rpx;
+      }
+    }
+
+    .date {
+      font-size: 30rpx;
+      color: $primary-gray-text-color;
+    }
+  }
+}

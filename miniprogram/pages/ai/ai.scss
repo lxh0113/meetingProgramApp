@@ -1,0 +1,53 @@
+/* pages/ai/ai.wxss */
+
+@import "../../common/common.scss";
+
+.messageContent {
+  .aiMessage {
+    display: flex;
+    margin-bottom: 40rpx;
+
+    image {
+      margin-right: 40rpx;
+      height: 90rpx;
+      width: 90rpx;
+    }
+
+    >.message {
+      background-color: $primary-message-background-color;
+      box-sizing: border-box;
+      padding: 20rpx;
+      border-radius: 0rpx 20rpx 20rpx 20rpx;
+      -webkit-border-radius: 0rpx 20rpx 20rpx 20rpx;
+      -moz-border-radius: 0rpx 20rpx 20rpx 20rpx;
+      -ms-border-radius: 0rpx 20rpx 20rpx 20rpx;
+      -o-border-radius: 0rpx 20rpx 20rpx 20rpx;
+    }
+
+  }
+
+  .myMessage {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40rpx;
+    margin-left: 100rpx;
+
+    >.message {
+      background-color: $primary-color;
+      padding: 20rpx;
+      color: white;
+      border-radius: 20rpx 0rpx 20rpx 20rpx;
+      -webkit-border-radius: 20rpx 0rpx 20rpx 20rpx;
+      -moz-border-radius: 20rpx 0rpx 20rpx 20rpx;
+      -ms-border-radius: 20rpx 0rpx 20rpx 20rpx;
+      -o-border-radius: 20rpx 0rpx 20rpx 20rpx;
+    }
+  }
+}
+
+.inputBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

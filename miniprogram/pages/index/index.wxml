@@ -1,0 +1,72 @@
+<view class="bigBox">
+  <view class="meeting">
+    <view class="title">
+      <text>快速入会/定会</text>
+      <image src="/images/icon/meetings.png" mode="aspectFit" />
+    </view>
+    <view class="meetingOperation">
+      <view>
+        <image src="../../images/icon/add.png" mode="aspectFit" />
+        <text>加入会议</text>
+      </view>
+      <view>
+        <image src="../../images/icon/book.png" mode="aspectFit" />
+        <text>预定会议</text>
+      </view>
+    </view>
+
+    <view class="schedule">
+      <view class="title">
+        <text>日程表</text>
+        <image src="../../images/icon/schedule.png" mode="aspectFit" />
+      </view>
+      <view class="schedules">
+        <view class="mySchedule">
+          <view class="top">
+            <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+            <view class="content">
+              <view class="title">股东第二次青岛会</view>
+              <view class="people">参与人员13人</view>
+            </view>
+            <view class="primaryTag">
+              等待
+            </view>
+          </view>
+          <view class="bottom">
+            <view class="left">
+              <image src="../../images/icon/time.png" mode="" />
+              <text>2小时20分钟</text>
+            </view>
+            <view class="right">
+              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="recommend">
+      <view class="title">
+        <text>推荐会议</text>
+        <image src="../../images/icon/recommend.png" mode="aspectFit" />
+      </view>
+      <view class="myMeetings">
+        <view class="myMeeting">
+          <image src="../../images/static/meeting.jpg" mode="aspectFill" />
+          <view class="details">
+            <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
+            <div class="content">
+              <text class="username">李泽言</text>
+              <text class="title">主题：重生之我是亿万富翁</text>
+            </div>
+            <view class="primaryTag">
+              进行中
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

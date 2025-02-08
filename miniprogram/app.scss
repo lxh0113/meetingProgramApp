@@ -1,2 +1,202 @@
-/**app.wxss**/
+/**app.scss**/
+@import "../miniprogram/common/common.scss";
 
+page {
+  --button-border-radius: 20rpx;
+  --button-default-color: white;
+  --button-default-background-color: #3578f6;
+}
+
+
+.bigBox{
+  box-sizing: border-box;
+  padding: 40rpx;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.avatar{
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  object-fit: contain;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.tag{
+  padding: 20rpx 40rpx;
+  border-radius: 40rpx;
+  -webkit-border-radius: 40rpx;
+  -moz-border-radius: 40rpx;
+  -ms-border-radius: 40rpx;
+  -o-border-radius: 40rpx;
+  // font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryTag{
+  @extend .tag;
+  color:$primary-color;
+  background-color: $primary-background-color;
+}
+
+.sccuessTag{
+  @extend .tag;
+  color:#f56c6c;
+  background-color: #fef0f0;
+}
+
+.dangerTag{
+  @extend .tag;
+  color:#67c23a;
+  background-color: #f0f9eb;
+}
+
+// icon
+@font-face {
+  font-family: "iconfont"; /* Project id 4819541 */
+  src: url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.woff2?t=1739023564590') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.woff?t=1739023564590') format('woff'),
+       url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.ttf?t=1739023564590') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-share1:before {
+  content: "\e6f3";
+}
+
+.icon-add1:before {
+  content: "\e621";
+}
+
+.icon-recommend:before {
+  content: "\e728";
+}
+
+.icon-refresh:before {
+  content: "\e6a2";
+}
+
+.icon-schedule:before {
+  content: "\e82e";
+}
+
+.icon-book:before {
+  content: "\e63c";
+}
+
+.icon-107meeting:before {
+  content: "\e7a7";
+}
+
+.icon-time:before {
+  content: "\e680";
+}
+
+.icon-caidan:before {
+  content: "\e601";
+}
+
+.icon-home:before {
+  content: "\e64d";
+}
+
+.icon-more:before {
+  content: "\e6ad";
+}
+
+.icon-information:before {
+  content: "\e62d";
+}
+
+.icon-forum:before {
+  content: "\e687";
+}
+
+.icon-message:before {
+  content: "\e78a";
+}
+
+.icon-setting:before {
+  content: "\e78e";
+}
+
+.icon-like:before {
+  content: "\e7c8";
+}
+
+.icon-video-fill:before {
+  content: "\e865";
+}
+
+.icon-screen:before {
+  content: "\e72e";
+}
+
+.icon-list:before {
+  content: "\e61d";
+}
+
+.icon-audio-fill:before {
+  content: "\e897";
+}
+
+.icon-audiostatic:before {
+  content: "\e8e8";
+}
+
+.icon-share:before {
+  content: "\e729";
+}
+
+.icon-add:before {
+  content: "\e6f1";
+}
+
+.icon-users:before {
+  content: "\e92e";
+}
+
+.icon-video:before {
+  content: "\e65e";
+}
+
+.icon-comments:before {
+  content: "\e614";
+}
+
+.icon-record_on:before {
+  content: "\e642";
+}
+
+.icon-aifuzhushenpian:before {
+  content: "\e60a";
+}
+
+.icon-Ai:before {
+  content: "\e605";
+}
+
+.icon-adduser:before {
+  content: "\e7b6";
+}
+
+[class*="icon"] { 
+	font-family: "iconfont";
+	font-size: inherit;/*继承父级*/
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;/*抗锯齿，字体清晰*/
+  -moz-osx-font-smoothing: grayscale;/*抗锯齿，比较清晰*/
+}

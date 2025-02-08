@@ -1,0 +1,13 @@
+<!--pages/message/message.wxml-->
+<view class="bigBox">
+  <view class="message" wx:for="[1,2]">
+    <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar"/>
+    <view class="content">
+      <text class="form">系统</text>
+      <text class="text">您预约的会议已经开始了</text>
+    </view>
+    <view class="date">
+      04-24 12:00
+    </view>
+  </view>
+</view>

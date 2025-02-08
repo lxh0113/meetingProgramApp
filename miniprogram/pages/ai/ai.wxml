@@ -1,0 +1,20 @@
+<!--pages/ai/ai.wxml-->
+<view class="bigBox">
+  <view class="messageContent">
+    <view class="aiMessage">
+      <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
+      <view class="message">
+        请问需要什么帮助吗
+      </view>
+    </view>
+
+    <view class="myMessage">
+      <view class="message">
+        不必了
+      </view>
+    </view>
+  </view>
+  <view class="inputBox">
+    <van-field value="{{ value }}" placeholder="请输入你的问题" border="{{ false }}" bind:change="onChange" />
+  </view>
+</view>

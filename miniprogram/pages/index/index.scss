@@ -1,0 +1,195 @@
+@import "../../common/common.scss";
+
+.title {
+  color: $primary-color;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 40rpx;
+
+  image {
+    width: 25px;
+    height: 25px;
+    margin-left: 20rpx;
+  }
+}
+
+.meetingOperation {
+  display: flex;
+  margin-top: 20rpx;
+
+  >view {
+    background-color: $primary-color;
+    border-radius: 40rpx;
+    -webkit-border-radius: 40rpx;
+    -moz-border-radius: 40rpx;
+    -ms-border-radius: 40rpx;
+    -o-border-radius: 40rpx;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 40rpx;
+    margin-right: 40rpx;
+
+    image {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 20rpx;
+    }
+  }
+}
+
+.schedule {
+  margin-top: 40rpx;
+
+  .schedules {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40rpx;
+
+    .mySchedule {
+      margin-top: 40rpx;
+
+      .top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20rpx;
+        border-bottom: 2px dotted $primary-border-color;
+
+        image {
+          margin-right: 40rpx;
+        }
+
+        .content {
+          flex: 1;
+          font-size: 36rpx;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          .title {
+            color: #0F3F62;
+          }
+        }
+
+        .primaryTag {
+          font-weight: bold;
+          font-size: 36rpx;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30rpx;
+
+        .left {
+          display: flex;
+          align-items: center;
+
+          image {
+            width: 20px;
+            height: 20px;
+          }
+
+          text {
+            font-weight: bold;
+          }
+        }
+
+        .right {
+          image {
+            width: 80rpx;
+            height: 80rpx;
+          }
+
+          image:nth-child(n+2) {
+            transform: translate(-20rpx);
+            -webkit-transform: translate(-20rpx);
+            -moz-transform: translate(-20rpx);
+            -ms-transform: translate(-20rpx);
+            -o-transform: translate(-20rpx);
+          }
+
+          image:nth-child(n+3) {
+            transform: translate(-40rpx);
+            -webkit-transform: translate(-40rpx);
+            -moz-transform: translate(-40rpx);
+            -ms-transform: translate(-40rpx);
+            -o-transform: translate(-40rpx);
+          }
+        }
+      }
+    }
+  }
+}
+
+.myMeetings {
+  display: flex;
+  flex-direction: column;
+
+  .myMeeting {
+    display: flex;
+    flex-direction: column;
+    border-radius: 40rpx;
+    -webkit-border-radius: 40rpx;
+    -moz-border-radius: 40rpx;
+    -ms-border-radius: 40rpx;
+    -o-border-radius: 40rpx;
+    width: 640rpx;
+    margin-top: 40rpx;
+    overflow: hidden;
+
+    image {
+      width: 640rpx;
+      max-height: 360rpx;
+      object-fit: cover;
+      background-color: red;
+      border: 1px solid $primary-border-color;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      width: 640rpx;
+      box-sizing: border-box;
+      padding: 20rpx 0rpx;
+      border-radius: 0rpx 0rpx 40rpx 40rpx;
+      -webkit-border-radius: 0rpx 0rpx 40rpx 40rpx;
+      -moz-border-radius: 0rpx 0rpx 40rpx 40rpx;
+      -ms-border-radius: 0rpx 0rpx 40rpx 40rpx;
+      -o-border-radius: 0rpx 0rpx 40rpx 40rpx;
+      border: 1px solid $primary-border-color;
+
+      image {
+        margin-right: 20rpx;
+        width: 90rpx;
+        height: 90rpx;
+        margin-left: 10rpx;
+      }
+
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 32rpx;
+
+        >.title {
+          font-size: 32rpx;
+          overflow: hidden;
+        }
+
+      }
+
+      .primaryTag {
+        font-size: 28rpx;
+        padding: 10rpx 20rpx;
+        margin-right: 10rpx;
+      }
+    }
+  }
+}

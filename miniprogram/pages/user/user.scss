@@ -1,0 +1,55 @@
+/* pages/user/user.wxss */
+
+.bigBox {
+  background-color: #d7e4fd;
+  padding: 0rpx;
+  display: flex;
+  flex-direction: column;
+
+  // padding-top: 200rpx;
+  .backImage {
+    height: 340rpx;
+    width: 100%;
+  }
+
+  .myUserInfo {
+    height: 1100rpx;
+    background-color: white;
+    padding: 40rpx;
+    border-radius: 80rpx 80rpx 0 0;
+    -webkit-border-radius: 80rpx 80rpx 0 0;
+    -moz-border-radius: 80rpx 80rpx 0 0;
+    -ms-border-radius: 80rpx 80rpx 0 0;
+    -o-border-radius: 80rpx 80rpx 0 0;
+    transform: translateY(-40rpx);
+    -webkit-transform: translateY(-40rpx);
+    -moz-transform: translateY(-40rpx);
+    -ms-transform: translateY(-40rpx);
+    -o-transform: translateY(-40rpx);
+
+    .myAvatar {
+      display: flex;
+      justify-content: center;
+      // background-color: red;
+
+      image {
+        width: 300rpx;
+        height: 300rpx;
+        transform: translateY(-150rpx);
+        -webkit-transform: translateY(-150rpx);
+        -moz-transform: translateY(-150rpx);
+        -ms-transform: translateY(-150rpx);
+        -o-transform: translateY(-150rpx);
+      }
+    }
+
+    .inputItem,.submit {
+      transform: translateY(-150rpx);
+      margin-bottom: 60rpx;
+
+      text {
+        font-size: 36rpx;
+      }
+    }
+  }
+}

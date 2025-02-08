@@ -1,0 +1,70 @@
+/* pages/forum/forum.wxss */
+
+@import "../../common/common.scss";
+
+.forums {
+  display: flex;
+  flex-direction: column;
+
+  .forumItem {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-sizing: border-box;
+    padding: 40rpx;
+    //background-color: red;
+    margin-bottom: 40rpx;
+    border-radius: 20rpx;
+    -webkit-border-radius: 20rpx;
+    -moz-border-radius: 20rpx;
+    -ms-border-radius: 20rpx;
+    -o-border-radius: 20rpx;
+
+    .title {
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    .content {
+      // background-color: red;
+      margin-top: 20rpx;
+      margin-bottom: 20rpx;
+      font-size: 36rpx;
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        align-items: center;
+
+        image {
+          margin-right: 40rpx;
+          width: 90rpx;
+          height: 90rpx;
+        }
+
+        .username {
+          color: $primary-color;
+          font-weight: bold;
+          font-size: 36rpx;
+        }
+      }
+
+      .right {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30rpx;
+        color: $primary-gray-text-color;
+
+        >view {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
