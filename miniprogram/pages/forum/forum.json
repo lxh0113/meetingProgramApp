@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Forum":"/components/forum/forum"
+  }
 }

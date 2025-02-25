@@ -13,7 +13,7 @@
   }
 
   .myUserInfo {
-    height: 1100rpx;
+    // height: 1100rpx;
     background-color: white;
     padding: 40rpx;
     border-radius: 80rpx 80rpx 0 0;
@@ -26,6 +26,7 @@
     -moz-transform: translateY(-40rpx);
     -ms-transform: translateY(-40rpx);
     -o-transform: translateY(-40rpx);
+
 
     .myAvatar {
       display: flex;
@@ -43,13 +44,19 @@
       }
     }
 
-    .inputItem,.submit {
-      transform: translateY(-150rpx);
+    .inputItem,
+    .submit {
+      // transform: translateY(-150rpx);
       margin-bottom: 60rpx;
 
       text {
         font-size: 36rpx;
       }
+    }
+
+    .submit {
+      padding-bottom: 30rpx;
+      margin-bottom: 0rpx;
     }
   }
 }

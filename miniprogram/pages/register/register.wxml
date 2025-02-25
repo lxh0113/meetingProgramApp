@@ -1,0 +1,27 @@
+<!--pages/register/register.wxml-->
+<view class="myBox">
+  <view class="t-login">
+    <!-- 页面装饰图片 -->
+    <image class="img-a" src="https://zhoukaiwen.com/img/loginImg/2.png"></image>
+    <image class="img-b" src="https://zhoukaiwen.com/img/loginImg/3.png"></image>
+    <!-- 标题 -->
+    <view class="t-b">{{ title }}</view>
+    <view class="t-b2">欢迎使用，智慧通小程序</view>
+    <form class="cl">
+      <view class="t-a">
+        <image src="https://zhoukaiwen.com/img/loginImg/sj.png"></image>
+        <view class="line"></view>
+        <input type="number" name="phone" placeholder="请输入账户" maxlength="11" v-model="phone" />
+      </view>
+      <view class="t-a">
+        <image src="https://zhoukaiwen.com/img/loginImg/yz.png"></image>
+        <view class="line"></view>
+        <input type="number" name="code" maxlength="6" placeholder="请输入密码" v-model="yzm" />
+        <view v-if="showText" class="t-c" bind:tap="getCode()">发送短信</view>
+				<view v-else class="t-c">重新发送({{ second }})</view>
+      </view>
+      <button bind:tap="login()">登 录</button>
+    </form>
+  
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--components/forum/forum.wxml-->
+<view class="forumItem" wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.id}}" bind:tap="toForum">
+  <text class="title">{{item.label}}</text>
+  <rich-text class="content" nodes="{{item.content}}"/>
+  <view class="details">
+    <view class="left">
+      <!-- <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
+      <text class="username">{{item.}}</text> -->
+      <text>{{item.date}}</text>
+    </view>
+    <view class="right">
+      <view class="like">
+        <view class="iconfont icon-like"></view>
+        <text>{{item.views}}</text>
+      </view>
+      <view class="message">
+        <view class="iconfont icon-message"></view>
+        <text>{{item.likes}}</text>
+      </view>
+      <view class="share">
+        <view class="iconfont icon-star"></view>
+        <text>{{item.favorites}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,30 +1,25 @@
 <!--pages/forum/forum.wxml-->
-<view class="bigBox">
-  <view class="forums">
-    <view class="forumItem" wx:for="[1,2]" wx:key="{{index}}">
-      <text class="title">我要暴富</text>
-      <text class="content">哇卡卡卡快快快快快快咔咔咔咔咔咔咔咔咔咔咔咔卡卡卡
-      </text>
-      <view class="details">
-        <view class="left">
-          <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
-          <text class="username">李泽言</text>
-        </view>
-        <view class="right">
-          <view class="like">
-            <view class="iconfont icon-like"></view>
-            <text>12</text>
-          </view>
-          <view class="message">
-            <view class="iconfont icon-message"></view>
-            <text>12</text>
-          </view>
-          <view class="share">
-            <view class="iconfont icon-share"></view>
-            <text>12</text>
-          </view>
-        </view>
+<view>
+  <van-tabs color="#3578f6" sticky active="{{ active }}" bind:change="onChange">
+    <van-tab title="推荐">
+      <view class="forums">
+        <Forum list="{{list}}" />
       </view>
-    </view>
-  </view>
+    </van-tab>
+    <van-tab title="我的帖子">
+      <view class="forums">
+        <Forum list="{{myList}}" />
+      </view>
+    </van-tab>
+    <van-tab title="我的关注">
+      <view class="forums">
+        <Forum list="{{myFollow}}" />
+      </view>
+    </van-tab>
+    <van-tab title="我的收藏">
+      <view class="forums">
+        <Forum list="{{myStar}}" />
+      </view>
+    </van-tab>
+  </van-tabs>
 </view>

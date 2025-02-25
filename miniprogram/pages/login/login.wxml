@@ -1,0 +1,23 @@
+<view class="myBox">
+  <view class="t-login">
+    <!-- 页面装饰图片 -->
+    <image class="img-a" src="https://zhoukaiwen.com/img/loginImg/2.png"></image>
+    <image class="img-b" src="https://zhoukaiwen.com/img/loginImg/3.png"></image>
+    <!-- 标题 -->
+    <view class="t-b">欢迎回来</view>
+    <view class="t-b2">欢迎使用，智慧通小程序</view>
+    <form class="cl">
+      <view class="t-a">
+        <image src="https://zhoukaiwen.com/img/loginImg/sj.png"></image>
+        <view class="line"></view>
+        <input type="number" placeholder="请输入账户" bindinput="changeAccount" value="{{account}}" />
+      </view>
+      <view class="t-a">
+        <image src="https://zhoukaiwen.com/img/loginImg/yz.png"></image>
+        <view class="line"></view>
+        <input type="password" placeholder="请输入密码" bindinput="changePassword" value="{{password}}" />
+      </view>
+      <button bind:tap="login">登 录</button>
+    </form>
+  </view>
+</view>

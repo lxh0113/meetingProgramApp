@@ -1,0 +1,69 @@
+<!--pages/viewForum/viewForum.wxml-->
+<view class="bigBox">
+  <!-- <view class="top">
+    <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    <view class="userInfo">
+      <text class="username">李泽言</text>
+      <text class="info">200+ 作品</text>
+    </view>
+    <van-button size="small" type="default">关注</van-button>
+  </view> -->
+  <view class="forum">
+    <view class="forumItem">
+      <text class="title">{{post.label}}</text>
+      <view class="info">
+        <text class="date">{{post.createTime}}</text>
+        <text class="browse">{{post.views}}+ 人浏览了该帖子</text>
+      </view>
+      <rich-text class="text" nodes="{{post.content}}">
+      </rich-text>
+      <view class="details">
+        <view class="left">
+          <van-image round width="2rem" height="2rem" src="{{post.userInfoVo.avatar}}" />
+          <text class="username">{{post.userInfoVo.username}}</text>
+        </view>
+        <view class="right">
+          <view class="like">
+            <view class="iconfont icon-eye"></view>
+            <text>{{post.views}}</text>
+          </view>
+          <view class="message">
+            <view class="iconfont icon-message"></view>
+            <text>{{post.likes}}</text>
+          </view>
+          <view class="share">
+            <view class="iconfont icon-share"></view>
+            <text>{{post.favorites}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="reply">
+    <text class="title">{{post.totalComments}}条相关回帖</text>
+    <view class="forumItem" wx:for="{{post.comments}}">
+      <rich-text class="text" nodes="{{item.comment}}">
+      </rich-text>
+      <view class="details">
+        <view class="left">
+          <!-- <van-image round width="2rem" height="2rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+          <text class="username">许墨</text> -->
+        </view>
+        <view class="right">
+          <view class="like">
+            <view class="iconfont icon-like"></view>
+            <text>12</text>
+          </view>
+          <view class="message">
+            <view class="iconfont icon-message"></view>
+            <text>12</text>
+          </view>
+          <view class="share">
+            <view class="iconfont icon-share"></view>
+            <text>12</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

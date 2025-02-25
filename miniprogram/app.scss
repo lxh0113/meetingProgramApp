@@ -1,6 +1,7 @@
 /**app.scss**/
 @import "../miniprogram/common/common.scss";
 
+
 page {
   --button-border-radius: 20rpx;
   --button-default-color: white;
@@ -60,9 +61,9 @@ page {
 // icon
 @font-face {
   font-family: "iconfont"; /* Project id 4819541 */
-  src: url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.woff2?t=1739023564590') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.woff?t=1739023564590') format('woff'),
-       url('//at.alicdn.com/t/c/font_4819541_c0wdhzh0viq.ttf?t=1739023564590') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4819541_scr8toxelsj.woff2?t=1739066810452') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4819541_scr8toxelsj.woff?t=1739066810452') format('woff'),
+       url('//at.alicdn.com/t/c/font_4819541_scr8toxelsj.ttf?t=1739066810452') format('truetype');
 }
 
 .iconfont {
@@ -71,6 +72,26 @@ page {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-password:before {
+  content: "\ea32";
+}
+
+.icon-custom-user:before {
+  content: "\e632";
+}
+
+.icon-password1:before {
+  content: "\e82b";
+}
+
+.icon-tel:before {
+  content: "\e676";
+}
+
+.icon-edit:before {
+  content: "\e732";
 }
 
 .icon-share1:before {
@@ -192,6 +213,7 @@ page {
 .icon-adduser:before {
   content: "\e7b6";
 }
+
 
 [class*="icon"] { 
 	font-family: "iconfont";

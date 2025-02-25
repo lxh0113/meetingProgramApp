@@ -1,15 +1,22 @@
 {
   "pages": [
-    "pages/user/user",
     "pages/index/index",
     "pages/forum/forum",
     "pages/ai/ai",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/user/user",
+    "pages/viewForum/viewForum",
+    "pages/login/login",
+    "pages/register/register"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-field": "@vant/weapp/field/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
   },
   "window": {
     "backgroundTextStyle": "dark",
