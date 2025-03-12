@@ -4,8 +4,6 @@
   <rich-text class="content" nodes="{{item.content}}"/>
   <view class="details">
     <view class="left">
-      <!-- <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
-      <text class="username">{{item.}}</text> -->
       <text>{{item.date}}</text>
     </view>
     <view class="right">

@@ -9,33 +9,33 @@
     <view class="inputItem">
       <text>名称</text>
       <van-cell-group>
-        <van-field title-width="30rpx" value="{{ username }}" clearable label="" left-icon="phone" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
+        <van-field title-width="30rpx" value="{{ userInfo.username }}" clearable label="" left-icon="phone" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
       </van-cell-group>
     </view>
     <view class="inputItem">
       <text>电话</text>
       <van-cell-group>
-        <van-field title-width="30rpx" value="{{ tel }}" clearable label="" left-icon="phone" placeholder="请输入电话名" bind:click-icon="onClickIcon" />
+        <van-field title-width="30rpx" value="{{ userInfo.phone }}" clearable label="" left-icon="phone" placeholder="请输入电话名" bind:click-icon="onClickIcon" />
       </van-cell-group>
     </view>
     <view class="inputItem">
       <text>邮箱</text>
       <van-cell-group>
-        <van-field value="{{ email }}" clearable label="" left-icon="user" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
+        <van-field value="{{ userInfo.email }}" clearable label="" left-icon="user" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
       </van-cell-group>
     </view>
-    <view class="inputItem">
+    <!-- <view class="inputItem">
       <text>旧密码</text>
       <van-cell-group>
-        <van-field value="{{ password }}" clearable label="" left-icon="user" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
+        <van-field value="{{ userInfo. }}" clearable label="" left-icon="user" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
       </van-cell-group>
-    </view>
-    <view class="inputItem">
+    </view> -->
+    <!-- <view class="inputItem">
       <text>新密码</text>
       <van-cell-group>
         <van-field clearable label="" left-icon="user" placeholder="请输入用户名" bind:click-icon="onClickIcon" />
       </van-cell-group>
-    </view>
+    </view> -->
     <view class="submit">
       <van-button type="default" size="large">保存</van-button>
     </view>

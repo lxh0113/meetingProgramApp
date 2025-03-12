@@ -16,7 +16,9 @@
     "van-image": "@vant/weapp/image/index",
     "van-popup": "@vant/weapp/popup/index",
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "van-empty": "@vant/weapp/empty/index"
   },
   "window": {
     "backgroundTextStyle": "dark",

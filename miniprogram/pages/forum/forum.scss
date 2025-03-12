@@ -7,3 +7,39 @@
   flex-direction: column;
   padding: 40rpx;
 }
+
+ul{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40rpx;
+
+  li{
+    margin-bottom: 40rpx;
+    // background-color: red;
+
+    .rankItem{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .rankNumber{
+        width: 60px;
+        height: 100rpx;
+        line-height: 100rpx;
+        display: flex;
+        justify-content: center;
+        // background-color: red;
+      }
+
+      image{
+        width: 60px;
+        height: 100%;
+      }
+
+      .title{
+        font-size: bold;
+      }
+    }
+  }
+}

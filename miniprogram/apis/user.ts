@@ -90,3 +90,14 @@ export const getFavorateAPI = (userId: number, page: number) => {
     },
   });
 };
+
+export const getUserFollowAPI = (userId: number, page: number) => {
+  return request({
+    url: "/users/attention",
+    method: "GET",
+    params: {
+      userId,
+      page,
+    },
+  });
+};

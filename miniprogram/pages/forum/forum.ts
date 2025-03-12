@@ -1,4 +1,5 @@
-import { getFavorateAPI, getPostAPI } from "../../apis/user";
+import { getRankingAPI } from "../../apis/forum";
+import { getFavorateAPI, getPostAPI, getUserFollowAPI } from "../../apis/user";
 
 // pages/forum/forum.ts
 Page({
@@ -13,15 +14,17 @@ Page({
     list: [],
     myStar: [],
     myFollow: [],
+    rank: []
   },
 
   onChange(event: any) {
-    console.log(typeof event.detail.name)
+    console.log(event.detail.name)
     switch (event.detail.name) {
-      case 0: this.getForums();break;
-      case 1: this.getMyForums();break;
-      case 2: this.getMyForums();break;
-      case 3: this.getMyStar();
+      case 0: this.getForums(); break;
+      case 1: this.getRank();break;
+      case 2: this.getMyForums(); break;
+      case 3: this.getMyFollow(); break;
+      case 4: this.getMyStar(); break;
     }
 
   },
@@ -36,7 +39,6 @@ Page({
       }
     })
   },
-
   async getForums() {
 
     const res = await getPostAPI(this.data.userId, 1);
@@ -44,6 +46,21 @@ Page({
     if (res.data.code === 200) {
       this.setData({
         list: res.data.data.posts
+      })
+    }
+    else {
+      wx.showToast({
+        title: "获取失败",
+        icon: "none"
+      })
+    }
+  },
+  async getRank() {
+    const res = await getRankingAPI();
+
+    if (res.data.code === 200) {
+      this.setData({
+        rank: res.data.data
       })
     }
     else {
@@ -70,7 +87,19 @@ Page({
     }
   },
   async getMyFollow() {
+    const res = await getUserFollowAPI(this.data.userId, 1);
 
+    if (res.data.code === 200) {
+      this.setData({
+        myFollow: res.data.data.posts
+      })
+    }
+    else {
+      wx.showToast({
+        title: "获取失败",
+        icon: "none"
+      })
+    }
   },
   async getMyStar() {
 

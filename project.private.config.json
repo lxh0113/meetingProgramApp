@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/ai/ai",
+          "pathName": "pages/ai/ai",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/forum/forum",
           "pathName": "pages/forum/forum",
           "query": "",

@@ -6,6 +6,24 @@
         <Forum list="{{list}}" />
       </view>
     </van-tab>
+    <van-tab title="排行榜">
+      <ul>
+        <li wx:for="{{rank}}" wx:key="{{index}}">
+          <view class="rankItem">
+            <view class="rankNumber">
+              <image wx:if="{{index < 3}}" src="{{'../../images/rank/'+(index+1)+'.png'}}" mode=""/>
+              <text wx:else>{{index+1}}</text>
+            </view>
+            <view class="title">
+              {{item.lable}}
+            </view>
+            <view class="view">
+              <van-button bind:tap="toViewForum" data-id="{{item.postId}}">查看</van-button>
+            </view>
+          </view>
+        </li>
+      </ul>
+    </van-tab>
     <van-tab title="我的帖子">
       <view class="forums">
         <Forum list="{{myList}}" />

@@ -1,3 +1,6 @@
+
+import { getUserInfoAPI } from "../../apis/user";
+
 // pages/user/user.ts
 Page({
 
@@ -5,24 +8,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username:'李泽言',
-    tel:'123',
-    email:'3123@qq.com',
-    password:'12'
+    account:'',
+    userInfo:{}
+  },
+  async getData() {
+    wx.getStorage({
+      key: "user",
+      success: (res) => {
+       
+        this.setData({
+          account: res.data.account
+        })
+      }
+    })
+  },
+  async getUserInfo(){
+    await this.getData()
+  
+    const res = await getUserInfoAPI(this.data.account)
+
+    if(res.data.code===200){
+      this.setData({
+        userInfo:res.data.data
+      })
+    }
+    else {
+      wx.showToast({
+        title:"获取失败",
+        icon:"none"
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-
+  async onReady() {
+  
+    this.getUserInfo()
   },
 
   /**

@@ -1,25 +1,3 @@
-
-/**
- * 请求配置
-*/
-export interface RequestConfig {
-  /** API路径 */
-  url?: string
-  /** Method类型 */
-  method?: "GET" | "POST" | "OPTIONS" | "PUT" | "DELETE"
-  /** 接口返回数据 */
-  params?: any
-  data?: any
-  /** 无TOKEN触发异常捕获时，是否执行异常逻辑 */
-  needToken?: boolean
-  /** Header头部 */
-  header?: object
-  /** 返回的数据格式 */
-  dataType?: string
-  /** 请求报错时，是否弹出message提示（默认弹出）*/
-  noShowMsg?: boolean
-}
-
 interface User {
   id: number;
   account: string;
@@ -103,6 +81,17 @@ interface ViewPost extends Post {
   totalComments: number;
 }
 
+export type AdminPost = {
+  id: number;
+  label: string;
+  views: number;
+  likes: number;
+  favorites: number;
+  comments: number;
+  avatar: string;
+  author: string;
+};
+
 export type ReplyComment = {
   userId: number;
   time: string;
@@ -131,8 +120,70 @@ export type Message = {
 
 export type MessageList = Array<Message>;
 
-export interface ResponseData {
-  code: number;
-  data: any;
-  message: string;
-}
+export type CurrentConversation = {
+  id: number;
+  title: string;
+  search_enabled: boolean;
+};
+
+export type Conversation = {
+  id: number;
+  title: string;
+  updated_at: string;
+  search_enabled: boolean;
+};
+
+export type ConversationList = Array<Conversation>;
+
+export type SearchItem = {
+  title: string;
+  link: string;
+  snippet: string;
+};
+
+export type SearchItemList = Array<SearchItem>;
+
+export type AIMessage = {
+  id: number;
+  role: "user" | "assistant";
+  content: string;
+  created_at: string;
+  metadata: object;
+};
+
+export type AIMessageList = Array<AIMessage>;
+
+export type MeetingSettings = {
+  id?: number;
+  username?: string;
+  // 关闭音频
+  startWithAudioMuted?: boolean;
+  startWithVideoMuted?: boolean;
+};
+
+export type RankPost = {
+  postId: number;
+  lable: string;
+  attentionCount: number;
+  userInfo: UserInfo;
+};
+
+export type AgentMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export type AgentMessageList = Array<AgentMessage>;
+
+export type MeetingSetting = {
+  title: string;
+  userId: number;
+  startTime: string;
+  meetingType: 0 | 1;
+  address: string|null;
+  lat: number|null;
+  lng: number|null;
+  password: string;
+  isprivate: number;
+  duration: number;
+};

@@ -3,16 +3,19 @@ import { RequestConfig, ResponseData } from "miniprogram/types/home"
 export function urlParams(param: {
   [key: string]: any
 }): string {
+
+
   // 需要是一个对象并进行封装
   let keys: string[] = Object.keys(param);
-
-  return keys.reduce((s, a) => {
-    return s += a + '=' + param[a] + '&'
-  }, '?').slice(0, -1)
-
+  
+    return keys.reduce((s, a) => {
+      return s += a + '=' + param[a] + '&'
+    }, '?').slice(0, -1)
+  
+  
 }
 
-
+export const baseUrl = 'http://127.0.0.1:8079'
 
 export const request = (parmas: RequestConfig) => {
   // 返回一个promise对象

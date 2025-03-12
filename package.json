@@ -6,7 +6,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.11.7"
+    "@vant/weapp": "^1.11.7",
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^2.12.0"
