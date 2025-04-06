@@ -19,7 +19,7 @@ Page({
         content: "你好我是你的ai小助手",
       },
     ],
-    agentId: "c22fc725-c9cf-41fc-ae5a-f22b080bd110",
+    agentId: "5575a296-d0af-4f7a-8ad8-2131830fb97c",
     header: {
       appKey: "hengnao5oxJTc2JEKIwUaBCmDeZ",
       sign: "",
@@ -39,6 +39,9 @@ Page({
     });
   },
   agentExcute() {
+    this.setData({
+      isLoading: true
+    })
     wx.request({
       url: "https://www.das-ai.com/open/api/v2/agent/execute",
       method: "POST",
@@ -53,37 +56,44 @@ Page({
       },
       success: (res) => {
         this.setData({
-          isLoading: true
+          isLoading: false
         })
+        
         // 假设服务器返回的数据是一个字符串
         const fullText = res.data.data.session.messages[res.data.data.session.messages.length - 1].content;
 
-        // 将字符串按每5个字分割成数组
-        const chunkSize = 5; // 每5个字一组
-        let chunks = [];
-        for (let i = 0; i < fullText.length; i += chunkSize) {
-          chunks.push(fullText.slice(i, i + chunkSize));
-        }
+        // // 将字符串按每5个字分割成数组
+        // const chunkSize = 5; // 每5个字一组
+        // let chunks = [];
+        // for (let i = 0; i < fullText.length; i += chunkSize) {
+        //   chunks.push(fullText.slice(i, i + chunkSize));
+        // }
 
-        let index = 0;
+        // let index = 0;
 
-        console.log(chunks)
+        // console.log(chunks)
+
+        let str = 'messageList[' + (this.data.messageList.length - 1) + '].content';
+        this.setData({
+          [str]: fullText
+        });
+        // this.data.messageList[this.data.messageList.length - 1].content +  fullText
 
         // 使用 setInterval 逐步更新 UI
-        const intervalId = setInterval(() => {
-          if (index < chunks.length) {
-            let str = 'messageList[' + (this.data.messageList.length - 1) + '].content';
-            this.setData({
-              [str]: this.data.messageList[this.data.messageList.length - 1].content + chunks[index]
-            });
-            index++;
-          } else {
-            clearInterval(intervalId); // 停止定时器
-            this.setData({
-              isLoading: false
-            });
-          }
-        }, 200); // 每 100 毫秒更新一次
+        // const intervalId = setInterval(() => {
+        //   if (index < chunks.length) {
+        //     let str = 'messageList[' + (this.data.messageList.length - 1) + '].content';
+        //     this.setData({
+        //       [str]: this.data.messageList[this.data.messageList.length - 1].content + chunks[index]
+        //     });
+        //     index++;
+        //   } else {
+        //     clearInterval(intervalId); // 停止定时器
+        //     this.setData({
+        //       isLoading: false
+        //     });
+        //   }
+        // }, 1000); // 每 100 毫秒更新一次
       }
     })
   },

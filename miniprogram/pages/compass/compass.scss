@@ -1,0 +1,32 @@
+/* pages/compass/compass.wxss */
+@import "../../common/common.scss";
+
+.bigBox {
+
+  >text {
+    margin-bottom: 20rpx;
+  }
+
+  .meetings {
+    display: flex;
+    flex-direction: column;
+
+    .meeting {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20rpx;
+
+
+      .name {
+        color: $primary-color;
+        font-weight: bold;
+      }
+
+      .date {
+        color: $primary-gray-text-color;
+        font-size: small;
+      }
+    }
+  }
+}

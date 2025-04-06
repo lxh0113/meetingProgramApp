@@ -45,7 +45,12 @@ interface Post {
   label: string;
   content: string;
   author: string;
-  status: string;
+  status: number;
+}
+
+export interface AdminPost extends Post {
+  avatar: string;
+  comments: number;
 }
 
 interface PublishPost {
@@ -80,17 +85,6 @@ interface ViewPost extends Post {
   pageSize: number;
   totalComments: number;
 }
-
-export type AdminPost = {
-  id: number;
-  label: string;
-  views: number;
-  likes: number;
-  favorites: number;
-  comments: number;
-  avatar: string;
-  author: string;
-};
 
 export type ReplyComment = {
   userId: number;
@@ -180,10 +174,49 @@ export type MeetingSetting = {
   userId: number;
   startTime: string;
   meetingType: 0 | 1;
-  address: string|null;
-  lat: number|null;
-  lng: number|null;
+  address: string | null;
+  lat: number | null;
+  lng: number | null;
   password: string;
   isprivate: number;
   duration: number;
 };
+
+export type BadWord = {
+  id: number;
+  word: string;
+};
+
+export type BadWordList = Array<BadWord>;
+
+export type Meeting = {
+  id: number;
+  title: string;
+  creator: string;
+  url: string;
+  createTime: string;
+  // 0 未开始 1 正在进行 2 已结束
+  status: 0 | 1 | 2;
+  users: number;
+};
+
+export type MeetingList = Array<Meeting>;
+
+export type Schedule = {
+  meetingId: number;
+  url: string;
+  usercount: number;
+  title: string;
+  startTime: string;
+  duration: number;
+  status: number;
+};
+
+export type ScheduleList = Array<Schedule>;
+
+export type Knowledge = {
+  startTime: string;
+  text: string;
+};
+
+export type KnowledgeList = Array<Knowledge>;

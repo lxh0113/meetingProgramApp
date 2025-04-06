@@ -5,13 +5,17 @@
       <image src="/images/icon/meetings.png" mode="aspectFit" />
     </view>
     <view class="meetingOperation">
-      <view>
+      <view bind:tap="showJoinDialogVisible">
         <image src="../../images/icon/add.png" mode="aspectFit" />
         <text>加入会议</text>
       </view>
-      <view>
+      <view bind:tap="showBookDialogVisible">
         <image src="../../images/icon/book.png" mode="aspectFit" />
         <text>预定会议</text>
+      </view>
+      <view bind:tap="toCompass">
+        <image src="../../images/icon/zhinan.png" mode="aspectFit" />
+        <text>参会指南</text>
       </view>
     </view>
 
@@ -21,26 +25,27 @@
         <image src="../../images/icon/schedule.png" mode="aspectFit" />
       </view>
       <view class="schedules">
-        <view class="mySchedule">
+        <view class="mySchedule" wx:for="{{schedules}}">
           <view class="top">
-            <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+            <image class="avatar" src="{{item.url}}" mode="" />
             <view class="content">
-              <view class="title">股东第二次青岛会</view>
-              <view class="people">参与人员13人</view>
+              <view class="title">{{item.title}}</view>
+              <view class="people">参与人员{{item.usercount}}人</view>
             </view>
-            <view class="primaryTag">
+            <view wx:if="{{item.status===0}}" class="primaryTag">
               等待
+            </view>
+            <view wx:if="{{item.status===1}}" class="primaryTag">
+              进行中
+            </view>
+            <view wx:if="{{item.status===2}}" class="primaryTag">
+              结束
             </view>
           </view>
           <view class="bottom">
             <view class="left">
               <image src="../../images/icon/time.png" mode="" />
-              <text>2小时20分钟</text>
-            </view>
-            <view class="right">
-              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
-              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
-              <image class="avatar" src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" />
+              <text>{{item.startTime}}</text>
             </view>
           </view>
         </view>
@@ -70,5 +75,77 @@
     </view>
   </view>
 
-  
+  <van-dialog use-slot show-cancel-button confirmButtonText="确认" show="{{joinDialogVisible}}" id="van-dialog" bind:confirm="confirmJoin">
+    <view class="form">
+      <label>
+        <text>用户名称</text>
+        <van-field value="{{ addFormData.username }}" data-str="addFormData.username" bind:change="onChange" placeholder="请输入用户名" border="{{ false }}" />
+      </label>
+      <label>
+        <text>是否开启音频</text>
+        <van-switch checked="{{ addFormData.startWithAudioMuted }}" data-str="addFormData.startWithAudioMuted" bind:change="onChange" />
+      </label>
+      <label>
+        <text>是否开始视频</text>
+        <van-switch checked="{{ addFormData.startWithVideoMuted }}" data-str="addFormData.startWithVideoMuted" bind:change="onChange" />
+      </label>
+    </view>
+  </van-dialog>
+
+  <van-dialog use-slot show="{{bookDialogVisible}}" id="van-dialog" show-cancel-button confirmButtonText="确认" bind:confirm="confirmBook">
+    <view class="form">
+      <label>
+        <text>会议标题</text>
+        <van-field value="{{ bookData.title }}" data-str="bookData.title" bind:change="onChange" placeholder="请输入会议标题" border="{{ false }}" />
+      </label>
+
+      <label>
+        <text>开始时间</text>
+        <!-- <van-datetime-picker type="date" value="{{ bookData.startTime }}" bind:input="onChange" /> -->
+        <van-field value="{{ bookData.startTime }}" data-str="bookData.startTime" bind:change="onChange" placeholder="输入格式：20xx/1/1 12:00:00" border="{{ false }}" type="datetime" />
+      </label>
+
+      <label>
+        <text>会议类型</text>
+        <van-radio-group value="{{ bookData.meetingType }}" bind:change="onChange" data-str="bookData.meetingType">
+          <van-radio name="{{0}}">线下会议</van-radio>
+          <van-radio name="{{1}}">线上会议</van-radio>
+        </van-radio-group>
+      </label>
+
+      <label wx:if="{{ bookData.meetingType===0 }}">
+        <text>会议地址</text>
+
+        <view style="display: flex;">
+          <van-field value="{{bookData.address}}" bind:change="onChange" bind:confirm="getAddress" data-str="bookData.address"></van-field>
+          <!-- <van-button type="default">搜索</van-button> -->
+        </view>
+
+      </label>
+
+      <label wx:if="{{ bookData.meetingType===0 }}">
+        <!-- <text>选择地址</text> -->
+        <map id="myMap" longitude="{{bookData.lng}}" latitude="{{bookData.lat}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" enable-traffic="{{true}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+        <!-- 示例代码：在页面中嵌入一个地图组件 -->
+      </label>
+
+      <label>
+        <text>会议密码</text>
+        <van-field value="{{ bookData.password }}" data-str="bookData.password" bind:change="onChange" placeholder="请输入会议密码" border="{{ false }}" password />
+      </label>
+
+      <label>
+        <text>会议权限</text>
+        <van-radio-group value="{{ bookData.isprivate }}" bind:change="onChange" data-str="bookData.isprivate">
+          <van-radio name="{{0}}">公开会议</van-radio>
+          <van-radio name="{{1}}">私有会议</van-radio>
+        </van-radio-group>
+      </label>
+
+      <label>
+        <text>持续时间(分钟)</text>
+        <van-field value="{{ bookData.duration }}" data-str="bookData.duration" bind:change="onChange" />
+      </label>
+    </view>
+  </van-dialog>
 </view>

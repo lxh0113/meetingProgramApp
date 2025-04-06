@@ -12,15 +12,14 @@ export function urlParams(param: {
       return s += a + '=' + param[a] + '&'
     }, '?').slice(0, -1)
   
-  
 }
 
-export const baseUrl = 'http://127.0.0.1:8079'
+export const baseUrl = 'http://129.204.152.171:8081'
 
 export const request = (parmas: RequestConfig) => {
   // 返回一个promise对象
   return new Promise<ResponseData>((resolve, reject) => {
-    const baseUrl = 'http://127.0.0.1:8079'
+    const baseUrl = 'http://129.204.152.171:8081'
     wx.request({
       url: baseUrl + parmas.url + (parmas.params ? urlParams(parmas.params) : ''), //仅为示例，并非真实的接口地址
       method: parmas.method || "GET",

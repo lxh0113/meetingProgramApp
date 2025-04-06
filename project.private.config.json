@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/map/map",
+          "pathName": "pages/map/map",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/compass/compass",
+          "pathName": "pages/compass/compass",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/ai/ai",
           "pathName": "pages/ai/ai",
           "query": "",

@@ -1,0 +1,23 @@
+<!--pages/compass.wxml-->
+<view class="bigBox">
+  <text>选择会议查看资料</text>
+  <view class="meetings">
+    <view class="meeting" wx:for="{{meetingsList}}" wx:key="{{item.meetingId}}">
+      <text class="name">{{item.title}}</text>
+      <text class="date">{{item.startTime}}</text>
+      <van-button type="default" bind:tap="getResource" data-id="{{item.meetingId}}">查看</van-button>
+      <!-- <van-button type="default" wx:if="{{item.address}}" bind:tap="openFile" data-id="{{item.meetingId}}">导航</van-button> -->
+      <van-button type="default" bind:tap="toMap" data-id="{{item.meetingId}}">导航</van-button>
+    </view>
+  </view>
+
+  <van-popup show="{{ show }}"  position="bottom"
+  custom-style="height: 50%;" bind:close="onClose">
+    <view style="padding: 40rpx;">
+      <view class="resource" wx:for="{{resourceList}}" wx:key="{{item.url}}" style="display: flex;justify-content: space-between;align-items: center;">
+        <text>{{item.name}}</text>
+        <van-button type="default" bind:tap="openFile" data-url="{{item.url}}">查看</van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>
