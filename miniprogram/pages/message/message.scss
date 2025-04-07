@@ -38,6 +38,16 @@
       color: $primary-gray-text-color;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      .timeText{
+        font-size: small;
+      }
+
+      .joinText{
+        color:$primary-color !important;
+      }
     }
   }
 }

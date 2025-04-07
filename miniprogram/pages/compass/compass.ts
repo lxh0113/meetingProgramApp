@@ -1,4 +1,4 @@
-import { getCalendarAPI, getMeetingResourceAPI } from "../../apis/meeting"
+import { getCalendarAPI, getMeetingDetailsAPI, getMeetingResourceAPI } from "../../apis/meeting"
 
 // pages/compass/compass.ts
 Page({
@@ -43,13 +43,20 @@ Page({
         resourceList: res.data.data
       })
 
-      this.setData({
+
+
+      if (this.data.resourceList.length !== 0) this.setData({
         show: true
       })
+      else {
+        wx.showToast({
+          title: "该会议无文件", icon: 'none'
+        })
+      }
     }
     else {
       wx.showToast({
-        title: "获取资料失败"
+        title: "获取资料失败", icon: 'none'
       })
     }
   },
@@ -102,7 +109,7 @@ Page({
           },
           fail: function (error) {
             wx.showToast({
-              title: '打开文件失败'
+              title: '打开文件失败', icon: 'none'
             })
             wx.hideLoading()
             console.log(error.errMsg)
@@ -111,12 +118,30 @@ Page({
       },
       fail: function (error) {
         wx.showToast({
-          title: "下载文件失败"
+          title: "下载文件失败", icon: 'none'
         })
 
         console.log(error.errMsg)
       }
     });
+  },
+  async getIsGuide(event) {
+    let id = event.currentTarget.dataset.id
+
+    console.log(id)
+
+    const res = await getMeetingDetailsAPI(id)
+
+    if (res.data.code === 200) {
+      return res.data.data.meetingType === "0" ? true : false
+    }
+    else {
+      return false
+    }
+
+    // return false
+
+
   },
   toMap(event) {
     let id = event.currentTarget.dataset.id
@@ -124,7 +149,7 @@ Page({
     console.log(id)
 
     wx.navigateTo({
-      url: '/pages/map/map'+'?id='+id
+      url: '/pages/map/map' + '?id=' + id
     })
   },
 

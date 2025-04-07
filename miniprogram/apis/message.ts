@@ -1,4 +1,4 @@
-import {request} from "../utils/request";
+import { request } from "../utils/request";
 export const getAllMessageListAPI = (userId: number) => {
   return request({
     url: "/message",
@@ -54,9 +54,14 @@ export const getMessageToDoInfoAPI = (messageToDoId: number) => {
   });
 };
 
-export const getToDosByYearMonthAPI = () => {
+export const getToDosByYearMonthAPI = (userId: number, year: number, month: number) => {
   return request({
     url: "/message/todos",
     method: "GET",
+    params: {
+      userId,
+      year,
+      month,
+    },
   });
 };
