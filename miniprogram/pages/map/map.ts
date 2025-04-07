@@ -11,8 +11,8 @@ Page({
     addmissage: '选的位置',
     // markers	 Array	标记点
     stitle: '故宫',
-    latitude: "12",
-    longitude: "12",
+    latitude: 1,
+    longitude: 2,
     scale: 14,
     markers: [],
     distanceArr: [],
@@ -38,10 +38,10 @@ Page({
   async getInfo() {
     // 根据会议id获取经纬度等信息
     const res = await getMeetingDetailsAPI(this.data.meetingData.id)
-
+    console.log(res)
     if (res.data.code === 200) {
       this.setData({
-        meetingData: res.data.data
+        meetingData: res.data.data[0]
       })
     }
     else {
@@ -66,7 +66,7 @@ Page({
           latitude: res.latitude
         })
         that.setData({
-          longitude: res.longitude
+          "longitude": res.longitude
         })
         // 发送给朋友、分享朋友圈
         // app.onShareAppMessage();
@@ -80,15 +80,28 @@ Page({
     this.getInfo()
   },
   //导航
-  onGuideTap: function (event) {
-
+  onGuideTap: function () {
+    wx.getSetting({
+      success: (res) => {
+        if (!res.authSetting['scope.userLocation']) {
+          wx.authorize({
+            scope: 'scope.userLocation',
+            success: () => this._doNavigation(),
+            fail: () => wx.showToast({ title: '需要位置权限', icon: 'none' })
+          });
+        } else {
+          this._doNavigation();
+        }
+      }
+    });
+  },
+  _doNavigation: function () {
+    console.log(this.data.meetingData)
     wx.openLocation({
-      type: 'gcj02',
       latitude: this.data.meetingData.lat,
       longitude: this.data.meetingData.lng,
       name: this.data.meetingData.address,
-      scale: 28
-    })
-  },
-
+      scale: 18
+    });
+  }
 })

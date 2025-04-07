@@ -4,7 +4,7 @@
   </view>
   <view class="myUserInfo">
     <view class="myAvatar">
-      <image src="https://img.yzcdn.cn/vant/cat.jpeg" mode="" class="avatar" />
+      <image src="{{userInfo.avatar}}" mode="" class="avatar" />
     </view>
     <view class="inputItem">
       <text>名称</text>
@@ -37,7 +37,7 @@
       </van-cell-group>
     </view> -->
     <view class="submit">
-      <van-button type="default" size="large">保存</van-button>
+      <van-button type="default" size="large" bind:tap="changeUserInfo">保存</van-button>
     </view>
   </view>
 </view>

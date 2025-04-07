@@ -7,8 +7,8 @@
 <!-- 以下是导航部分 -->
 <view class='list-guide'>
   <!-- 这里的坐标本应该是从服务器获取数据的,这时先写死在页面上了data-latitude='39.92392' data-longitude='116.411885' -->
-  <view bindtap="onGuideTap" >
-    <image src='../../images/logo/logo.png' class='list-guide-imgae'></image>
+  <view bindtap="onGuideTap" data-latitude='{{meetingData.lat}}' data-longitude="{{meetingData.lng}}">
+    <image src='../../images/logo/logo.png' class='list-guide-imgae' ></image>
     <text class='list-guide-text'>路径规划</text>
   </view>
 </view>
